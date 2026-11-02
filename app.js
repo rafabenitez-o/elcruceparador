@@ -72,7 +72,7 @@ function dibujar() {
     ? `<a class="pastilla" href="${RESENA_URL}" target="_blank" rel="noopener"><img src="img/cubiertos.webp" alt="" width="24" height="24"><span>${t.resena}</span><img src="img/cubiertos.webp" alt="" width="24" height="24"></a>` : "";
   // Los 2 primeros platos aparecen de una; el resto con animación al hacer scroll
   document.querySelectorAll(".plato").forEach((el, i) => {
-    if (io && primera && !quieto && i >= 2) io.observe(el); else el.classList.add("vis");
+    if (io && primera && !quieto && i >= 0) io.observe(el); else el.classList.add("vis");
   });
   primera = false;
   armarRuta();

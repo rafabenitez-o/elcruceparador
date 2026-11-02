@@ -3,7 +3,7 @@
 //   Si no hay señal o tarda más de 3 segundos, usa la copia guardada.
 // - Imágenes y fuente: usa la copia guardada y la actualiza por detrás.
 // Si cambiás fotos y no se ven, subí el número: cambiá "menu-v3" por "menu-v4".
-const C = "menu-v3";
+const C = "menu-v4";
 const ESPERA = 3000;
 
 self.addEventListener("install", () => self.skipWaiting());

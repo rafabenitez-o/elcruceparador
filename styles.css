@@ -38,7 +38,7 @@ h2{font-weight:400;font-size:22px;letter-spacing:4px;color:var(--acento);text-al
 .pastilla:active{transform:scale(.98)}
 .aviso{text-align:center;padding:30px 18px;color:var(--tenue)}
 .plato{cursor:pointer;-webkit-tap-highlight-color:transparent}
-.visor{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(10,10,10,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;overscroll-behavior:contain;touch-action:none}
+.visor{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(10,10,10,.99);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;overscroll-behavior:contain;touch-action:none}
 .visor.abierto{opacity:1;visibility:visible}
 .visor-caja{display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;max-width:360px;text-align:center;transform:scale(.92);transition:transform .3s}
 .visor.abierto .visor-caja{transform:none}

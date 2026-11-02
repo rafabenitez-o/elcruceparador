@@ -1,0 +1,54 @@
+:root{--fondo:#1b1b1b;--texto:#fff;--tenue:#bdbdbd;--acento:#5fa06a}
+*{box-sizing:border-box;margin:0}
+html{background:var(--fondo) url(img/fondo.webp) repeat-y center top/100% auto}
+body{color:var(--texto);font-family:'Londrina Solid',Impact,sans-serif;max-width:520px;margin:0 auto;padding:0 18px 110px;overflow-x:clip}
+header{text-align:center;padding:22px 0 8px;position:relative;z-index:1}
+.logo{width:78%;max-width:340px;height:auto}
+#idiomas{display:flex;gap:8px;justify-content:center;margin-top:14px}
+#idiomas button{background:none;border:2px solid var(--tenue);color:var(--tenue);font:inherit;font-size:18px;letter-spacing:1px;min-height:44px;min-width:64px;padding:4px 16px;border-radius:22px;cursor:pointer}
+#idiomas button.on{background:var(--texto);border-color:var(--texto);color:var(--fondo)}
+#idiomas button:focus-visible,.pastilla:focus-visible{outline:3px solid var(--acento);outline-offset:3px}
+h2{font-weight:400;font-size:22px;letter-spacing:4px;color:var(--acento);text-align:center;margin:34px 0 8px}
+.plato{display:flex;align-items:center;gap:14px;margin:18px 0;opacity:0;transform:translateX(-24px);transition:opacity .6s,transform .6s}
+.plato.inv{flex-direction:row-reverse;text-align:right;transform:translateX(24px)}
+.plato.vis{opacity:1;transform:none}
+.foto{flex:0 0 100px;height:100px;border-radius:50%;background:#fff;overflow:hidden}
+.foto img{width:100%;height:100%;object-fit:cover}
+.info{flex:1;border-bottom:2px solid var(--texto);padding-bottom:6px;margin-right:52px}
+.plato.inv .info{margin-right:0;margin-left:52px}
+.nombre{font-size:26px;line-height:1.05;text-transform:uppercase}
+.detalle{font-size:17px;color:var(--tenue);text-transform:uppercase;margin-top:2px}
+.precio{font-size:22px;color:var(--acento);margin-top:4px}
+.opc{display:flex;justify-content:space-between;gap:10px;font-size:19px;text-transform:uppercase}
+.opc b{font-weight:400;color:var(--acento)}
+.extra{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid #444;padding:10px 0;margin-left:52px}
+.extra .nombre{font-size:22px}
+.extra .precio{margin:0;white-space:nowrap}
+.extra.bloque{display:block}
+.extra.bloque .opc{margin-top:4px}
+#area{position:relative}
+#ruta{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+#camino{position:absolute;inset:0;width:100%;height:100%}
+#camino path{fill:none;stroke:rgba(255,255,255,.35);stroke-width:3;stroke-dasharray:10 10;stroke-linecap:round}
+#auto{position:absolute;top:0;left:0;width:46px;height:auto;will-change:transform}
+#carta{position:relative;z-index:1}
+#pie{position:relative;z-index:1;padding-top:44px}
+.pastilla{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:10px 26px;border-radius:999px;background:var(--acento);color:var(--fondo);font-size:21px;letter-spacing:.5px;text-align:center;text-decoration:none;line-height:1.1}
+.pastilla img{flex:none;width:24px;height:24px}
+.pastilla:active{transform:scale(.98)}
+.aviso{text-align:center;padding:30px 18px;color:var(--tenue)}
+.plato{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.visor{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(10,10,10,.72);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;overscroll-behavior:contain;touch-action:none}
+.visor.abierto{opacity:1;visibility:visible}
+.visor-caja{display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;max-width:360px;text-align:center;transform:scale(.92);transition:transform .3s}
+.visor.abierto .visor-caja{transform:none}
+.visor-foto{width:min(78vw,340px);aspect-ratio:1;border-radius:50%;background:#fff;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.visor-foto img{width:100%;height:100%;object-fit:cover}
+.visor-texto{width:100%;max-width:300px}
+.visor-texto .nombre{font-size:30px}
+.visor-texto .detalle{font-size:18px}
+.visor-texto .opc{font-size:22px}
+.visor-texto .precio{font-size:26px;margin-top:6px}
+.visor-x{position:absolute;top:max(14px,env(safe-area-inset-top));right:16px;width:44px;height:44px;border:2px solid var(--tenue);border-radius:50%;background:none;color:var(--texto);font:inherit;font-size:28px;line-height:1;cursor:pointer}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.visor{background:rgba(10,10,10,.94)}}
+@media (prefers-reduced-motion:reduce){.plato{opacity:1;transform:none;transition:none}.visor,.visor-caja{transition:none}}
